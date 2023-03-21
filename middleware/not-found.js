@@ -1,3 +1,5 @@
-const notFound = (req, res) => res.status(404).send('Route does not exist')
-
-module.exports = notFound
+const { notFound } = require('../errors')
+const NotFound = (req, res) => {
+    throw new notFound("Route does not exists")
+}
+module.exports = NotFound
